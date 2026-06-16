@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio'MF - 91.1 MHz</title>
+    <link rel="icon" type="image/svg+xml" href="/asd.jpeg" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto+Condensed:wght@300;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="cosmic-background">
+        <div class="space-layer layer-1"></div>
+        <div class="space-layer layer-2"></div>
+        <div class="space-layer layer-3"></div>
+        <div class="nebula"></div>
+        
+        <canvas id="visualizer"></canvas>
+
+        <div id="rotate-hint">
+            <div class="floral-phone-container">
+                <span class="f1">🌸</span>
+                <span class="f2">🌺</span>
+                <span class="f3">🌼</span>
+                
+                <div class="animated-phone">
+                    <div class="phone-screen"></div>
+                </div>
+            </div>
+            <div class="hint-text">Birtane'M, telefonu yan çevirir misin? 🤍</div>
+        </div>
+
+        <div class="radio-scale-wrapper" id="radio-wrapper">
+            
+            <div class="radio-chassis">
+                <div class="leather-stitching"></div>
+                
+                <div class="radio-faceplate">
+                    <div class="screw top-left"></div>
+                    <div class="screw top-right"></div>
+                    <div class="screw bottom-left"></div>
+                    <div class="screw bottom-right"></div>
+                    
+                    <div class="speaker-section">
+                        <div class="vacuum-tubes"></div>
+                        <div class="speaker-mesh"></div>
+                    </div>
+
+                    <div class="display-container">
+                        <div class="glass-screen">
+                            <div class="screen-reflection"></div>
+                            
+                            <div class="tuning-track">
+                                <span class="track-num">88</span>
+                                <span class="track-num marker">90</span>
+                                <span class="track-num marker">92</span>
+                                <span class="track-num">94</span>
+                                <span class="track-num">98</span>
+                                <span class="track-num">102</span>
+                                <span class="track-num">108</span>
+                            </div>
+                            
+                            <div id="tuning-needle"></div>
+                            
+                            <div class="station-meta">
+                                <span id="current-freq">91.1 MHz</span>
+                                <span id="station-tag">MF FM</span>
+                            </div>
+
+                            <div id="volume-overlay">VOL: 100</div>
+                        </div>
+                    </div>
+
+                    <div class="radio-controls">
+                        <div class="knob-complex vol-control">
+                            <div class="knob-outer">
+                                <div class="knob-inner" id="volume-knob">
+                                    <div class="knob-indicator-light"></div>
+                                </div>
+                            </div>
+                            <span class="control-label">VOLUME</span>
+                        </div>
+
+                        <div class="media-deck">
+                            <button id="prev-btn" class="mech-btn">
+                                <div class="btn-face">⏮</div>
+                            </button>
+                            <button id="play-pause-btn" class="mech-btn play-main">
+                                <div class="btn-face">▶</div>
+                            </button>
+                            <button id="next-btn" class="mech-btn">
+                                <div class="btn-face">⏭</div>
+                            </button>
+                        </div>
+
+                        <div class="knob-complex tuning-control">
+                            <div class="knob-outer">
+                                <div class="knob-inner" id="tuning-knob">
+                                    <div class="knob-indicator-light"></div>
+                                </div>
+                            </div>
+                            <span class="control-label">TUNING</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <audio id="audio-player" src="radio2.mp3" crossorigin="anonymous" loop></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
