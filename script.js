@@ -231,8 +231,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = document.getElementById("next-btn");
 
     // Çalma Listesi Mantığı
-    const playlist = ["radio2.mp3", "m-icin.mp3"];
-    let currentTrackIndex = 0; // 0: radio2.mp3, 1: m-icin.mp3
+    const playlist = ["yeni-kayit.mp3", "radio2.mp3", "m-icin.mp3"];
+    let currentTrackIndex = 0; // 0: yeni-kayit.mp3, 1: radio2.mp3, 2: m-icin.mp3
+    let hasLiveButtonAppeared = false;
+
+    const liveBtn = document.getElementById("live-connect-btn");
+    
+    // Canlı yayına bağlan butonunu 15. saniyede göster, şarkı değişene kadar kalsın
+    audioPlayer.addEventListener("timeupdate", () => {
+        if (currentTrackIndex === 0) {
+            if (audioPlayer.currentTime >= 15) {
+                hasLiveButtonAppeared = true;
+            }
+            if (hasLiveButtonAppeared) {
+                liveBtn.style.opacity = "1";
+                liveBtn.style.pointerEvents = "all";
+            } else {
+                liveBtn.style.opacity = "0";
+                liveBtn.style.pointerEvents = "none";
+            }
+        } else {
+            liveBtn.style.opacity = "0";
+            liveBtn.style.pointerEvents = "none";
+        }
+    });
 
     // Müziği oynatmayı başlatan ve UI'ı güncelleyen yardımcı fonksiyon
     function playCurrentTrack() {
@@ -256,6 +278,8 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
         }
+        
+        hasLiveButtonAppeared = false; // Şarkı değiştiğinde durumu sıfırla
         
         audioPlayer.src = playlist[currentTrackIndex];
         audioPlayer.currentTime = 0; // Şarkıyı en başa sar

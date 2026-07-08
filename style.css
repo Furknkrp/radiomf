@@ -99,6 +99,69 @@ body {
     mix-blend-mode: screen; 
 }
 
+/* --- CANLI YAYINA BAĞLAN BUTONU (ROMANTİK KALP) --- */
+#live-connect-btn {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 3s ease-in-out;
+    z-index: 100;
+    animation: heartbeat 1.5s infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 42, 95, 0.8));
+}
+
+#live-connect-btn::before,
+#live-connect-btn::after {
+    position: absolute;
+    content: "";
+    left: 80px;
+    top: 0;
+    width: 80px;
+    height: 125px;
+    background: linear-gradient(135deg, #ff4d79, #cc0033);
+    border-radius: 80px 80px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+#live-connect-btn::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.heart-text {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.4;
+    margin-top: -15px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+    letter-spacing: 1px;
+}
+
+@keyframes heartbeat {
+    0% { transform: translateX(-50%) scale(1); filter: drop-shadow(0 0 15px rgba(255, 42, 95, 0.6)); }
+    15% { transform: translateX(-50%) scale(1.15); filter: drop-shadow(0 0 25px rgba(255, 42, 95, 0.9)); }
+    30% { transform: translateX(-50%) scale(1); filter: drop-shadow(0 0 15px rgba(255, 42, 95, 0.6)); }
+    45% { transform: translateX(-50%) scale(1.15); filter: drop-shadow(0 0 25px rgba(255, 42, 95, 0.9)); }
+    60% { transform: translateX(-50%) scale(1); filter: drop-shadow(0 0 15px rgba(255, 42, 95, 0.6)); }
+    100% { transform: translateX(-50%) scale(1); filter: drop-shadow(0 0 15px rgba(255, 42, 95, 0.6)); }
+}
+
 /* --- ÖLÇEKLEME SARICISI --- */
 .radio-scale-wrapper { 
     z-index: 10; 
