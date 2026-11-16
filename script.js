@@ -231,8 +231,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = document.getElementById("next-btn");
 
     // Çalma Listesi Mantığı
-    const playlist = ["yeni-kayit.mp3", "radio2.mp3", "m-icin.mp3"];
-    let currentTrackIndex = 0; // 0: yeni-kayit.mp3, 1: radio2.mp3, 2: m-icin.mp3
+    const playlist = ["yeni-yayin.mp3", "yeni-kayit.mp3", "radio2.mp3", "m-icin.mp3"];
+    let currentTrackIndex = 0; // 0: yeni-yayin.mp3, 1: yeni-kayit.mp3, 2: radio2.mp3, 3: m-icin.mp3
     let hasLiveButtonAppeared = false;
 
     const liveBtn = document.getElementById("live-connect-btn");
